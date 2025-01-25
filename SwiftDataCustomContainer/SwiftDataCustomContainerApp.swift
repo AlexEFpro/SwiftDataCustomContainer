@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SwiftDataCustomContainerApp: App {
@@ -13,5 +14,7 @@ struct SwiftDataCustomContainerApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for:FriendModel.self) // Paso dos creacion del contenedor 
+        
     }
 }

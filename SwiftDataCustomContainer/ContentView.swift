@@ -6,19 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @Environment(\.modelContext) private var modelContext // Paso3 insercion del context
+    @Query private var friends: [FriendModel] // solicitud sencilla
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List(friends){ friend in
+            HStack{ Text(friend.firstName)
+                Text(friend.lastName)
+            }
+            
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(FriendModel.preview)
 }
