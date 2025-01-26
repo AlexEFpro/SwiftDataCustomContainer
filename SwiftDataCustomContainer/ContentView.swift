@@ -22,7 +22,14 @@ struct ContentView: View {
 }
 #if DEBUG // this it's necessary when use the preview content folder.
 #Preview {
-    ContentView()
+    // opcion 3 directo en preview
+//    let container = try! ModelContainer(for: FriendModel.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+//    //Add mock
+//    container.mainContext.insert(FriendModel(firstName: "Alejandro", lastName: "Salinas"))
+//    container.mainContext.insert(FriendModel(firstName: "Maria", lastName: "Perez"))
+//    container.mainContext.insert(FriendModel(firstName: "Juan", lastName: "Lopez"))
+  return  ContentView()
         .modelContainer(FriendModel.preview)
+    //en el caso directo en preview se pasa por parametro la let declarada en este caso container
 }
 #endif
