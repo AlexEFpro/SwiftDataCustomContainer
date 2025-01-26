@@ -20,8 +20,9 @@ struct ContentView: View {
         }
     }
 }
-
+#if DEBUG // this it's necessary when use the preview content folder.
 #Preview {
     ContentView()
         .modelContainer(FriendModel.preview)
 }
+#endif
